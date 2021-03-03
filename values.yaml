@@ -1,0 +1,21 @@
+# Default values for mysql-client.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/mysql-client
+  tag: 10.2.15-r0
+  pullPolicy: IfNotPresent
+
+job:
+  activeDeadlineSeconds: 1200
+
+
+env:
+  MYSQL_DB: mysql
+  MYSQL_HOST: mysql
+  MYSQL_PORT: 3306
+  MYSQL_USER: root
+  MYSQL_PASS: "123456"
+  SQL_SCRIPT: |
+          CREATE DATABASE IF NOT EXISTS test DEFAULT CHARSET utf8 COLLATE utf8_general_ci;;
